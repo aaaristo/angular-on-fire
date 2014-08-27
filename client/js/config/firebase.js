@@ -1,4 +1,4 @@
-var ref = new Firebase('https://sizzling-inferno-5668.firebaseio.com/');
+var ref = new Firebase(localStorage.getItem('AOF_FIREBASE'));
 
 app.factory('sync',['$firebase',
     function ($firebase)
