@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AngularOnFire</title>
+
+    <!-- Bootstrap -->
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/lib/angular-growl/build/angular-growl.min.css" rel="stylesheet" media="screen"/>
+    <link href="/css/app.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="/lib/html5shiv/dist/html5shiv.min.js"></script>
+      <script src="/lib/respond/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript"> var paceOptions= { ajax: { trackMethods: ['GET','PUT','POST','DELETE'] } }; </script>
+    <script src="/lib/pace/pace.min.js"></script>
+    <link href="/lib/pace/themes/pace-theme-flash.css" rel="stylesheet" >
+  </head>
+  <body ng-app="angular-on-fire">
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">AngularOnFire</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right" ng-show="user">
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown"><span ng-bind="user.displayName">Username</span> <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#/profile"><i class="glyphicon glyphicon-cog"></i> Settings</a></li>
+                  <li><a ng-click="logout()"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                </ul>
+              </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right" ng-hide="user">
+              <li><a ng-click="login()">Sign in <i class="glyphicon glyphicon-log-in"></i></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div id="wrap">
+        <div class="container theme-showcase" role="main" ng-view>
+        </div> <!-- /container -->
+    </div> <!-- /wrap -->
+
+   
+    <div id="footer">
+        <div class="container theme-showcase" role="footer" style="margin-top: 10px">
+            <p class="pull-right">© Copyright 2010 - 2014 Customer Inc.</p>
+        </div> <!-- /container -->
+    </div> <!-- /wrap -->
+
+    <div style="z-index:10000;position: absolute;" growl></div>
+
+    <script src="/lib/underscore/underscore.js"></script>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/lib/angular/angular.min.js"></script>
+    <script src="/lib/firebase/firebase.js"></script>
+    <script src="/lib/firebase-simple-login/firebase-simple-login.js"></script>
+    <script src="/lib/angularfire/dist/angularfire.min.js"></script>
+    <script src="/lib/angular-route/angular-route.min.js"></script>
+    <script src="/lib/angular-growl/build/angular-growl.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/config/routes.js"></script>
+    <script src="/js/config/growl.js"></script>
+    <script src="/js/config/http.js"></script>
+    <script src="/js/config/filters.js"></script>
+    <script src="/js/config/firebase.js"></script>
+    <script src="/js/config/login.js"></script>
+    <script src="/js/ctrl/home.js"></script>
+  </body>
+</html>
